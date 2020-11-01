@@ -1,0 +1,19 @@
+- config:
+    name: test_channel
+    base_url: http://www.hnxmxit.com
+
+- test:
+    name: 接口名称 湖南新梦想主页
+    request:
+      url: /
+      method: GET
+    extract:
+      - code: status_code
+      - info: reason
+      - time: elapsed.microseconds #请求响应时间 单位 ms
+      - header_con: headers.Content-Type
+    validate:
+      - eq: [$code,200]
+      - eq: [$info,"OK"]
+      - eq: [$header_con,'text/html']
+

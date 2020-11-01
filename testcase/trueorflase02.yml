@@ -1,0 +1,13 @@
+- config:
+    name: test_channel
+    base_url: http://www.hnxmxit.com
+
+- test:
+    name: 接口名称 湖南新梦想主页
+    request:
+      url: /
+      method: GET
+    extract:
+      scode: reason
+    validate:
+      - {'check':$scode,'comparator':'==','except':'ok'}

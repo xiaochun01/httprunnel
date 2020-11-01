@@ -1,0 +1,11 @@
+
+name: get access_token api
+base_url: ${ENV(BASE_URL)}
+request:
+  method: GET
+  url: /cgi-bin/token
+  params:
+    grant_type: client_credential
+    appid: wx55614004f367f8ca
+    secret: 65515b46dd758dfdb09420bb7db2c67f
+

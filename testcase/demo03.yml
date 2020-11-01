@@ -1,0 +1,18 @@
+#模拟请求头
+- config:
+    name: 验证百度搜索
+    base_url: http://www.baidu.com
+
+- test:
+    name: 调用百度接口
+    request:
+     method: GET
+     url: /s
+     params:
+      wd: newdream
+    headers:
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36
+      Accept: application/json, text/javascript, */*; q=0.01
+
+    validate:
+      - eq: ["status_code",200]

@@ -1,0 +1,11 @@
+name: create tag api
+base_url: ${ENV(BASE_URL)}
+request:
+    method: POST
+    url: /cgi-bin/tags/create
+    params:
+        access_token: $token
+        json: {   "tag" : {     "name" : "伞兵卢本伟1111111"   } }
+
+    validate:
+        - eq: ["status_code",200]

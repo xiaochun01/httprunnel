@@ -1,0 +1,18 @@
+
+
+- config:
+    name: 验证获取公众号已创建标签
+    base_url: https://api.weixin.qq.com
+
+- test:
+    name: 获取标签
+    request:
+      method: GET
+      url: /cgi-bin/tags/get
+      params:
+        access_token: 38_g543A5CjwJ1ekFFw2xNtn3aBKIrdZJ2VjQtUXjcaIFazL42RxsdoKsnZf2zMCm--bKsVzgDRes6FIm7CaFdlGl8nM_8kwKsztn93W-GNDJ4MBFDJEqt0wLNoUtbvA5BxjCbcN5d9Zvoz7A6oFYLcABABUH
+    extract:
+      bname: content.tags.0.name
+
+    validate:
+      - eq: [$bname,'星标组']

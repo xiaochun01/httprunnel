@@ -1,0 +1,18 @@
+- config:
+    name: test_channel
+    base_url: https://www.baidu.com
+
+- test:
+    name: 接口名称 湖南新梦想主页
+    request:
+      url: /
+      method: GET
+    extract:
+      v: <a href=https://www.hao123.com name=(.+?) class=mnav>hao123</a>
+
+#    title: <title>(.+?)</title>
+
+    validate:
+#    - eq: [$title,'湖南新梦想软测教育咨询有限公司_']
+      - eq: [$v,'tj_trhao123']
+
